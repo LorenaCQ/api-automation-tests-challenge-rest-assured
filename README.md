@@ -1,3 +1,5 @@
 <h1>📋 TO DO</h1>
 
-- Você deverá fazer sua collections usando a API Restful-booker
+- Fazer sua collections usando a API Restful-booker
+- Exportar a collection
+- Subir a collection no repositório
