@@ -18,7 +18,7 @@ import static io.restassured.config.LogConfig.logConfig;
 import static io.restassured.module.jsv.JsonSchemaValidator.*;
 import static java.util.concurrent.TimeUnit.DAYS;
 import static org.hamcrest.Matchers.*;
-
+@TestMethodOrder(MethodOrderer.OrderAnnotation.class)
 public class BookingTests {
     public static Faker faker;
     private static RequestSpecification request;
@@ -58,7 +58,9 @@ public class BookingTests {
                 .auth().basic("admin", "password123");
     }
 
+
     @Test
+    @Order(1)
     public void getAllBookingsById_returnOk(){
         Response response = request
                 .when()
@@ -67,12 +69,12 @@ public class BookingTests {
                 .extract()
                 .response();
 
-
         Assertions.assertNotNull(response);
         Assertions.assertEquals(200, response.statusCode());
     }
 
     @Test
+    @Order(2)
     public void  getAllBookingsByUserFirstName_BookingExists_returnOk(){
         request
                 .when()
@@ -84,14 +86,12 @@ public class BookingTests {
                 .contentType(ContentType.JSON)
                 .and()
                 .body("results", hasSize(greaterThan(0)));
-
     }
 
     @Test
+    @Order(3)
     public void  CreateBooking_WithValidData_returnOk(){
-
-        Booking test = booking;
-        given().config(RestAssured.config().logConfig(logConfig().enableLoggingOfRequestAndResponseIfValidationFails()))
+        request
                 .contentType(ContentType.JSON)
                 .when()
                 .body(booking)
@@ -102,8 +102,20 @@ public class BookingTests {
                 .assertThat()
                 .statusCode(200)
                 .contentType(ContentType.JSON).and().time(lessThan(2000L));
-
-
     }
+
+    /*@Test
+    @Order(4)
+    public void  UpdateBooking_WithValidData_returnOk(){
+        int idToUpdate = 1;
+        request
+                .when()
+                .body(booking)
+                .put("/booking/" + idToUpdate)
+                .then()
+                .assertThat()
+                .statusCode(200)
+                .and().time(lessThan(2000L));
+    }*/
 
 }
