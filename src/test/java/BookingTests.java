@@ -11,9 +11,12 @@ import io.restassured.response.Response;
 import io.restassured.specification.RequestSpecification;
 import org.junit.jupiter.api.*;
 
+import java.time.LocalDate;
+
 import static io.restassured.RestAssured.given;
 import static io.restassured.config.LogConfig.logConfig;
 import static io.restassured.module.jsv.JsonSchemaValidator.*;
+import static java.util.concurrent.TimeUnit.DAYS;
 import static org.hamcrest.Matchers.*;
 
 public class BookingTests {
@@ -34,7 +37,13 @@ public class BookingTests {
                 faker.internet().password(8,10),
                 faker.phoneNumber().toString());
 
-        bookingDates = new BookingDates("2022-11-15", "2022-11-17");
+        /*Gera uma data checkin igual a data atual e a data checkout é gerada a partir da data checkin
+          somando dias aleatórios entre 1 e 5 dias. E então usa o método toString() para converter em String
+          no formato "yyyy-MM-dd". */
+        LocalDate checkin = LocalDate.now();
+        LocalDate checkout = checkin.plusDays(faker.number().numberBetween(1,5));
+
+        bookingDates = new BookingDates(checkin.toString(), checkout.toString());
         booking = new Booking(user.getFirstName(), user.getLastName(),
                 (float)faker.number().randomDouble(2, 50, 100000),
                 true,bookingDates,

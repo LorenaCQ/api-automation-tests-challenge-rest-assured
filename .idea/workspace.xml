@@ -4,8 +4,9 @@
     <option name="autoReloadType" value="SELECTIVE" />
   </component>
   <component name="ChangeListManager">
-    <list default="true" id="accb3ef9-cc48-4f4d-b832-63b81017dd56" name="Changes" comment="Automatizando com Rest Assured">
+    <list default="true" id="accb3ef9-cc48-4f4d-b832-63b81017dd56" name="Changes" comment="add report">
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/test/java/BookingTests.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/test/java/BookingTests.java" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -38,10 +39,11 @@
     &quot;RunOnceActivity.OpenProjectViewOnStart&quot;: &quot;true&quot;,
     &quot;RunOnceActivity.ShowReadmeOnStart&quot;: &quot;true&quot;,
     &quot;SHARE_PROJECT_CONFIGURATION_FILES&quot;: &quot;true&quot;,
+    &quot;last_opened_file_path&quot;: &quot;D:/Documentos/DIO/APIAutomationTestsChallengeRestAssured&quot;,
     &quot;settings.editor.selected.configurable&quot;: &quot;reference.settings.project.maven.runner&quot;
   }
 }</component>
-  <component name="RunManager" selected="JUnit.BookingTests.CreateBooking_WithValidData_returnOk">
+  <component name="RunManager" selected="JUnit.BookingTests">
     <configuration name="BookingTests" type="JUnit" factoryName="JUnit" temporary="true" nameIsGenerated="true">
       <module name="APIAutomationTestsChallengeRestAssured" />
       <option name="PACKAGE_NAME" value="" />
@@ -73,8 +75,8 @@
     </configuration>
     <recent_temporary>
       <list>
-        <item itemvalue="JUnit.BookingTests.CreateBooking_WithValidData_returnOk" />
         <item itemvalue="JUnit.BookingTests" />
+        <item itemvalue="JUnit.BookingTests.CreateBooking_WithValidData_returnOk" />
         <item itemvalue="JUnit.BookingTests.getAllBookingsByUserFirstName_BookingExists_returnOk" />
       </list>
     </recent_temporary>
@@ -95,7 +97,14 @@
       <option name="project" value="LOCAL" />
       <updated>1668741118170</updated>
     </task>
-    <option name="localTasksCounter" value="2" />
+    <task id="LOCAL-00002" summary="add report">
+      <created>1670338636987</created>
+      <option name="number" value="00002" />
+      <option name="presentableId" value="LOCAL-00002" />
+      <option name="project" value="LOCAL" />
+      <updated>1670338636987</updated>
+    </task>
+    <option name="localTasksCounter" value="3" />
     <servers />
   </component>
   <component name="Vcs.Log.Tabs.Properties">
@@ -111,6 +120,7 @@
   </component>
   <component name="VcsManagerConfiguration">
     <MESSAGE value="Automatizando com Rest Assured" />
-    <option name="LAST_COMMIT_MESSAGE" value="Automatizando com Rest Assured" />
+    <MESSAGE value="add report" />
+    <option name="LAST_COMMIT_MESSAGE" value="add report" />
   </component>
 </project>
