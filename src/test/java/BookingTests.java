@@ -12,6 +12,8 @@ import io.restassured.specification.RequestSpecification;
 import org.junit.jupiter.api.*;
 
 import java.time.LocalDate;
+import java.util.HashMap;
+import java.util.Map;
 
 import static io.restassured.RestAssured.given;
 import static io.restassured.config.LogConfig.logConfig;
@@ -23,6 +25,9 @@ public class BookingTests {
     public static Faker faker;
     private static RequestSpecification request;
     private static Booking booking;
+    private static String bookingId;
+    private static Response response;
+    public static String token = "";
     private static BookingDates bookingDates;
     private static User user;
 
@@ -58,11 +63,30 @@ public class BookingTests {
                 .auth().basic("admin", "password123");
     }
 
-
     @Test
     @Order(1)
+    public void CreateAuthToken_returnOk(){
+        Map<String, String> body = new HashMap<>();
+        body.put("username", "admin");
+        body.put("password", "password123");
+
+        token = request
+                .header("ContentType", "application/json")
+                .when()
+                .body(body)
+                .post("/auth")
+                .then()
+                .assertThat()
+                .statusCode(200)
+                .and()
+                .time(lessThan(2000L))
+                .extract()
+                .path("token");
+    }
+    @Test
+    @Order(2)
     public void getAllBookingsById_returnOk(){
-        Response response = request
+        response = request
                 .when()
                 .get("/booking")
                 .then()
@@ -74,7 +98,7 @@ public class BookingTests {
     }
 
     @Test
-    @Order(2)
+    @Order(3)
     public void  getAllBookingsByUserFirstName_BookingExists_returnOk(){
         request
                 .when()
@@ -89,9 +113,9 @@ public class BookingTests {
     }
 
     @Test
-    @Order(3)
+    @Order(4)
     public void  CreateBooking_WithValidData_returnOk(){
-        request
+        response = request
                 .contentType(ContentType.JSON)
                 .when()
                 .body(booking)
@@ -101,21 +125,35 @@ public class BookingTests {
                 .and()
                 .assertThat()
                 .statusCode(200)
-                .contentType(ContentType.JSON).and().time(lessThan(2000L));
+                .contentType(ContentType.JSON).and().time(lessThan(2000L))
+                .extract().response();
+
+        bookingId = response.path("bookingid").toString();
     }
 
-    /*@Test
-    @Order(4)
+    @Test
+    @Order(5)
     public void  UpdateBooking_WithValidData_returnOk(){
-        int idToUpdate = 1;
+
+        faker = new Faker();
+        LocalDate checkin = LocalDate.now();
+        LocalDate checkout = checkin.plusDays(faker.number().numberBetween(1,5));
+        bookingDates = new BookingDates(checkin.toString(), checkout.toString());
+
+        Booking booking2 = new Booking(user.getFirstName(), user.getLastName(),
+                (float)faker.number().randomDouble(2, 50, 100000),
+                true,bookingDates,
+                "");
+
         request
+                .header("Cookie", "token=".concat(token))
                 .when()
-                .body(booking)
-                .put("/booking/" + idToUpdate)
+                .body(booking2)
+                .put("/booking/" + bookingId)
                 .then()
                 .assertThat()
                 .statusCode(200)
                 .and().time(lessThan(2000L));
-    }*/
+    }
 
 }

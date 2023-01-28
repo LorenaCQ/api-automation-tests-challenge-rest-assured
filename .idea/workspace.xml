@@ -4,10 +4,9 @@
     <option name="autoReloadType" value="SELECTIVE" />
   </component>
   <component name="ChangeListManager">
-    <list default="true" id="accb3ef9-cc48-4f4d-b832-63b81017dd56" name="Changes" comment="Update gerar checkin e checkout com java faker">
+    <list default="true" id="accb3ef9-cc48-4f4d-b832-63b81017dd56" name="Changes" comment="Update">
+      <change afterPath="$PROJECT_DIR$/src/main/java/Entities/PropertiesLogin.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/pom.xml" beforeDir="false" afterPath="$PROJECT_DIR$/pom.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/resources/createBookingResponseSchema.json" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/resources/createBookingResponseSchema.json" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/test/java/BookingTests.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/test/java/BookingTests.java" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
@@ -36,16 +35,16 @@
     <option name="hideEmptyMiddlePackages" value="true" />
     <option name="showLibraryContents" value="true" />
   </component>
-  <component name="PropertiesComponent">{
-  &quot;keyToString&quot;: {
-    &quot;RunOnceActivity.OpenProjectViewOnStart&quot;: &quot;true&quot;,
-    &quot;RunOnceActivity.ShowReadmeOnStart&quot;: &quot;true&quot;,
-    &quot;SHARE_PROJECT_CONFIGURATION_FILES&quot;: &quot;true&quot;,
-    &quot;last_opened_file_path&quot;: &quot;D:/Documentos/DIO/APIAutomationTestsChallengeRestAssured&quot;,
-    &quot;settings.editor.selected.configurable&quot;: &quot;reference.settings.project.maven.runner&quot;
+  <component name="PropertiesComponent"><![CDATA[{
+  "keyToString": {
+    "RunOnceActivity.OpenProjectViewOnStart": "true",
+    "RunOnceActivity.ShowReadmeOnStart": "true",
+    "SHARE_PROJECT_CONFIGURATION_FILES": "true",
+    "last_opened_file_path": "D:/Documentos/DIO/APIAutomationTestsChallengeRestAssured",
+    "settings.editor.selected.configurable": "reference.settings.project.maven.repository.indices"
   }
-}</component>
-  <component name="RunManager" selected="JUnit.BookingTests.UpdateBooking_WithValidData_returnOk">
+}]]></component>
+  <component name="RunManager" selected="JUnit.BookingTests">
     <configuration name="BookingTests" type="JUnit" factoryName="JUnit" temporary="true" nameIsGenerated="true">
       <module name="APIAutomationTestsChallengeRestAssured" />
       <option name="PACKAGE_NAME" value="" />
@@ -87,8 +86,8 @@
     </configuration>
     <recent_temporary>
       <list>
-        <item itemvalue="JUnit.BookingTests.UpdateBooking_WithValidData_returnOk" />
         <item itemvalue="JUnit.BookingTests" />
+        <item itemvalue="JUnit.BookingTests.UpdateBooking_WithValidData_returnOk" />
         <item itemvalue="JUnit.BookingTests.CreateBooking_WithValidData_returnOk" />
         <item itemvalue="JUnit.BookingTests.getAllBookingsByUserFirstName_BookingExists_returnOk" />
       </list>
@@ -152,7 +151,14 @@
       <option name="project" value="LOCAL" />
       <updated>1674857478172</updated>
     </task>
-    <option name="localTasksCounter" value="8" />
+    <task id="LOCAL-00008" summary="Update">
+      <created>1674862568967</created>
+      <option name="number" value="00008" />
+      <option name="presentableId" value="LOCAL-00008" />
+      <option name="project" value="LOCAL" />
+      <updated>1674862568967</updated>
+    </task>
+    <option name="localTasksCounter" value="9" />
     <servers />
   </component>
   <component name="Vcs.Log.Tabs.Properties">
@@ -171,6 +177,7 @@
     <MESSAGE value="add report" />
     <MESSAGE value="Update gerar datas de checkin e checkout com java faker" />
     <MESSAGE value="Update gerar checkin e checkout com java faker" />
-    <option name="LAST_COMMIT_MESSAGE" value="Update gerar checkin e checkout com java faker" />
+    <MESSAGE value="Update" />
+    <option name="LAST_COMMIT_MESSAGE" value="Update" />
   </component>
 </project>
