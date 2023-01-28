@@ -4,8 +4,9 @@
     <option name="autoReloadType" value="SELECTIVE" />
   </component>
   <component name="ChangeListManager">
-    <list default="true" id="accb3ef9-cc48-4f4d-b832-63b81017dd56" name="Changes" comment="add test update booking">
+    <list default="true" id="accb3ef9-cc48-4f4d-b832-63b81017dd56" name="Changes" comment="add test update partial and delete booking">
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/README.md" beforeDir="false" afterPath="$PROJECT_DIR$/README.md" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/test/java/BookingTests.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/test/java/BookingTests.java" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
@@ -164,7 +165,14 @@
       <option name="project" value="LOCAL" />
       <updated>1674865531077</updated>
     </task>
-    <option name="localTasksCounter" value="10" />
+    <task id="LOCAL-00010" summary="add test update partial and delete booking">
+      <created>1674866859298</created>
+      <option name="number" value="00010" />
+      <option name="presentableId" value="LOCAL-00010" />
+      <option name="project" value="LOCAL" />
+      <updated>1674866859298</updated>
+    </task>
+    <option name="localTasksCounter" value="11" />
     <servers />
   </component>
   <component name="Vcs.Log.Tabs.Properties">
@@ -185,6 +193,7 @@
     <MESSAGE value="Update gerar checkin e checkout com java faker" />
     <MESSAGE value="Update" />
     <MESSAGE value="add test update booking" />
-    <option name="LAST_COMMIT_MESSAGE" value="add test update booking" />
+    <MESSAGE value="add test update partial and delete booking" />
+    <option name="LAST_COMMIT_MESSAGE" value="add test update partial and delete booking" />
   </component>
 </project>

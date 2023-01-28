@@ -51,7 +51,7 @@ A classe importa três outras classes: Booking, BookingDates e User. Essas class
 
 A classe também importa a biblioteca RestAssured, que é usada para fazer solicitações HTTP à API de reserva de hotel. A classe também usa os filtros RequestLoggingFilter, ResponseLoggingFilter e ErrorLoggingFilter da biblioteca RestAssured para registrar solicitações, respostas e erros durante os testes.
 
-A classe possui três métodos de teste: getAllBookingsById_returnOk, getAllBookingsByUserFirstName_BookingExists_returnOk e CreateBooking_WithValidData_returnOk. Cada método de teste envia uma solicitação HTTP à API de reserva de hotel e verifica se a resposta é válida.
+A classe possui 7 métodos de teste: createAuthToken_returnOk, getAllBookingsById_returnOk, getAllBookingsByUserFirstName_BookingExists_returnOk, createBooking_WithValidData_returnOk, updateBooking_WithValidData_returnOk, partialUpdateBooking_WithValidData_returnOk, deleteBooking_WithValidData_returnOk. Cada método de teste envia uma solicitação HTTP à API de reserva de hotel e verifica se a resposta é válida.
 
 O método Setup é executado uma vez antes de todos os testes, e inicializa o objeto faker, cria um novo usuário e uma nova reserva com as informações do usuário e atribui a URL da API de reserva de hotel à propriedade baseURI da classe RestAssured.
 

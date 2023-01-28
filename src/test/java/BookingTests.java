@@ -191,5 +191,4 @@ public class BookingTests {
                 .assertThat()
                 .statusCode(201);
     }
-
 }
