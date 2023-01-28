@@ -4,8 +4,7 @@
     <option name="autoReloadType" value="SELECTIVE" />
   </component>
   <component name="ChangeListManager">
-    <list default="true" id="accb3ef9-cc48-4f4d-b832-63b81017dd56" name="Changes" comment="Update">
-      <change afterPath="$PROJECT_DIR$/src/main/java/Entities/PropertiesLogin.java" afterDir="false" />
+    <list default="true" id="accb3ef9-cc48-4f4d-b832-63b81017dd56" name="Changes" comment="add test update booking">
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/test/java/BookingTests.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/test/java/BookingTests.java" afterDir="false" />
     </list>
@@ -158,7 +157,14 @@
       <option name="project" value="LOCAL" />
       <updated>1674862568967</updated>
     </task>
-    <option name="localTasksCounter" value="9" />
+    <task id="LOCAL-00009" summary="add test update booking">
+      <created>1674865531077</created>
+      <option name="number" value="00009" />
+      <option name="presentableId" value="LOCAL-00009" />
+      <option name="project" value="LOCAL" />
+      <updated>1674865531077</updated>
+    </task>
+    <option name="localTasksCounter" value="10" />
     <servers />
   </component>
   <component name="Vcs.Log.Tabs.Properties">
@@ -178,6 +184,7 @@
     <MESSAGE value="Update gerar datas de checkin e checkout com java faker" />
     <MESSAGE value="Update gerar checkin e checkout com java faker" />
     <MESSAGE value="Update" />
-    <option name="LAST_COMMIT_MESSAGE" value="Update" />
+    <MESSAGE value="add test update booking" />
+    <option name="LAST_COMMIT_MESSAGE" value="add test update booking" />
   </component>
 </project>

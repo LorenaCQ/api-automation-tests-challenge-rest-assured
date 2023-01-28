@@ -7,8 +7,10 @@ import io.restassured.filter.log.ErrorLoggingFilter;
 import io.restassured.filter.log.RequestLoggingFilter;
 import io.restassured.filter.log.ResponseLoggingFilter;
 import io.restassured.http.ContentType;
+import io.restassured.module.jsv.JsonSchemaValidator;
 import io.restassured.response.Response;
 import io.restassured.specification.RequestSpecification;
+import org.hamcrest.Matchers;
 import org.junit.jupiter.api.*;
 
 import java.time.LocalDate;
@@ -65,7 +67,7 @@ public class BookingTests {
 
     @Test
     @Order(1)
-    public void CreateAuthToken_returnOk(){
+    public void createAuthToken_returnOk(){
         Map<String, String> body = new HashMap<>();
         body.put("username", "admin");
         body.put("password", "password123");
@@ -81,7 +83,7 @@ public class BookingTests {
                 .and()
                 .time(lessThan(2000L))
                 .extract()
-                .path("token");
+                .path("token").toString();
     }
     @Test
     @Order(2)
@@ -114,7 +116,7 @@ public class BookingTests {
 
     @Test
     @Order(4)
-    public void  CreateBooking_WithValidData_returnOk(){
+    public void  createBooking_WithValidData_returnOk(){
         response = request
                 .contentType(ContentType.JSON)
                 .when()
@@ -133,7 +135,7 @@ public class BookingTests {
 
     @Test
     @Order(5)
-    public void  UpdateBooking_WithValidData_returnOk(){
+    public void  updateBooking_WithValidData_returnOk(){
 
         faker = new Faker();
         LocalDate checkin = LocalDate.now();
@@ -146,7 +148,7 @@ public class BookingTests {
                 "");
 
         request
-                .header("Cookie", "token=".concat(token))
+                .header("Cookie", "token=" + token)
                 .when()
                 .body(booking2)
                 .put("/booking/" + bookingId)
@@ -154,6 +156,40 @@ public class BookingTests {
                 .assertThat()
                 .statusCode(200)
                 .and().time(lessThan(2000L));
+    }
+
+    @Test
+    @Order(6)
+    public void  partialUpdateBooking_WithValidData_returnOk(){
+
+        faker = new Faker();
+        String firstName = faker.name().firstName();
+        String lastName = faker.name().lastName();
+        String booking3 =
+                "{\n" +
+                " \"firstname\": \"" + firstName + "\" ,\n" +
+                " \"lastname\": \"" + lastName + "\"    \n}";
+        request
+                .header("Cookie", "token=" + token)
+                .contentType(ContentType.JSON)
+                .body(booking3)
+                .when()
+                .patch("/booking/" + bookingId)
+                .then()
+                .assertThat().statusCode(200)
+                .and().time(Matchers.lessThan(2000L)).and()
+                .body(matchesJsonSchemaInClasspath("createBookingRequestSchema.json"));
+    }
+    @Test // Delete booking
+    @Order(7)
+    public void deleteBooking_WithValidData_returnOk(){
+        request
+                .header("Cookie", "token=" + token)
+                .when()
+                .delete("/booking/" + bookingId)
+                .then()
+                .assertThat()
+                .statusCode(201);
     }
 
 }
