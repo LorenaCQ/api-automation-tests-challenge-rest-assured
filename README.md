@@ -1,8 +1,24 @@
-<h1>📋 TO DO</h1>
+<h1>📋 Exercícios obrigatórios</h1>
 
-- Fazer sua collection usando a API Restful-booker
-- Exportar a collection
-- Subir a collection no repositório
+<h3>🟩 Conhecendo a API</h3>
+
+➔ A base para qualquer teste automatizado é o teste
+manual, portanto exploraremos a API
+primeiramente no Postman.
+
+➔ TO DO:<br>
+◆ Fazer sua collection usando a API
+Restful-booker.<br>
+◆ Exportar a collection.<br>
+◆ Subir sua collection no repositório.
+
+<h3>🟩 Automatizando com Rest Assured</h3>
+
+➔ TO DO:<br>
+◆ Fazer uma suíte de testes cobrindo todos
+os endpoints da documentação.<br>
+◆ Gerar o report usando o Allure Framework.<br>
+◆ Subir o projeto para o repositório.<br>
 
 <h3>✔️ Contida na pasta Postman: A collection foi feita no Postman e exportada como arquivo .json </h3>
 Sobre Restful-booker:
