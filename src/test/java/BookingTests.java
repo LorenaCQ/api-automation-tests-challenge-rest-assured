@@ -68,9 +68,7 @@ public class BookingTests {
     @Test
     @Order(1)
     public void createAuthToken_returnOk(){
-        Map<String, String> body = new HashMap<>();
-        body.put("username", "admin");
-        body.put("password", "password123");
+        Map<String, String> body = Map.of("username", "admin", "password", "password123");
 
         token = request
                 .header("ContentType", "application/json")
@@ -165,14 +163,11 @@ public class BookingTests {
         faker = new Faker();
         String firstName = faker.name().firstName();
         String lastName = faker.name().lastName();
-        String booking3 =
-                "{\n" +
-                " \"firstname\": \"" + firstName + "\" ,\n" +
-                " \"lastname\": \"" + lastName + "\"    \n}";
+        Map<String, String> bookingPartial = Map.of("firstname", firstName, "lastname", lastName);
         request
                 .header("Cookie", "token=" + token)
                 .contentType(ContentType.JSON)
-                .body(booking3)
+                .body(bookingPartial)
                 .when()
                 .patch("/booking/" + bookingId)
                 .then()

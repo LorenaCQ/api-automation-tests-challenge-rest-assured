@@ -53,8 +53,16 @@ A classe também importa a biblioteca RestAssured, que é usada para fazer solic
 
 A classe possui 7 métodos de teste: createAuthToken_returnOk, getAllBookingsById_returnOk, getAllBookingsByUserFirstName_BookingExists_returnOk, createBooking_WithValidData_returnOk, updateBooking_WithValidData_returnOk, partialUpdateBooking_WithValidData_returnOk, deleteBooking_WithValidData_returnOk. Cada método de teste envia uma solicitação HTTP à API de reserva de hotel e verifica se a resposta é válida.
 
-O método Setup é executado uma vez antes de todos os testes, e inicializa o objeto faker, cria um novo usuário e uma nova reserva com as informações do usuário e atribui a URL da API de reserva de hotel à propriedade baseURI da classe RestAssured.
+O método Setup() é executado antes de todos os outros testes e é responsável por configurar o RestAssured.baseURI e instanciar o objeto faker da classe Faker. Além disso, ele também cria uma reserva, uma data de reserva e um usuário, que são utilizados nos testes posteriores.
+
+O método setRequest() é executado antes de cada teste e é responsável por configurar a especificação da solicitação para o teste atual.
+
+O método createAuthToken_returnOk() testa se a autenticação é bem-sucedida, enviando uma solicitação POST com as credenciais de administrador para a API e verificando se a resposta tem código de status 200 (OK). Se for bem-sucedido, o token de autenticação é armazenado para uso posterior.
+
+O método getAllBookingsById_returnOk() testa se é possível obter todas as reservas enviando uma solicitação GET para a API e verificando se a resposta tem código de status 200 (OK).
+
+O método getAllBookingsByUserFirstName_BookingExists_returnOk() testa se é possível obter reservas por nome do usuário, enviando uma solicitação GET com o parâmetro firstName para a API e verificando se a resposta tem código de status 200 (OK).
+
+Os outros métodos funcionam da mesma forma, testando diferentes funcionalidades da API de reserva. Ao final de cada método de teste, há uma verificação de asserção para garantir que o resultado seja o esperado.
 
 O método setRequest é executado antes de cada método de teste e inicializa o objeto request com as configurações padrão para as solicitações HTTP (como o tipo de conteúdo e autenticação básica).
-
-Os três métodos de teste enviarão solicitações HTTP à API de reserva de hotel e verificarão se as respostas são válidas de acordo com os critérios especificados.
