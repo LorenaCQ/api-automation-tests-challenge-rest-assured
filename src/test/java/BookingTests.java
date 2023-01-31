@@ -175,7 +175,7 @@ public class BookingTests {
                 .and().time(Matchers.lessThan(2000L)).and()
                 .body(matchesJsonSchemaInClasspath("createBookingRequestSchema.json"));
     }
-    @Test // Delete booking
+    @Test
     @Order(7)
     public void deleteBooking_WithValidData_returnOk(){
         request
