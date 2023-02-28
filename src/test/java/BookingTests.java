@@ -125,7 +125,8 @@ public class BookingTests {
                 .then()
                 .assertThat()
                 .statusCode(200)
-        ;
+                .and()
+                .body("firstname", notNullValue());
     }
 
     @Test
