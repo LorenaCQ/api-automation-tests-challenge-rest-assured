@@ -4,10 +4,9 @@
     <option name="autoReloadType" value="SELECTIVE" />
   </component>
   <component name="ChangeListManager">
-    <list default="true" id="accb3ef9-cc48-4f4d-b832-63b81017dd56" name="Changes" comment="update BookingTests and README">
+    <list default="true" id="accb3ef9-cc48-4f4d-b832-63b81017dd56" name="Changes" comment="update README and add prints Allure Framework">
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/README.md" beforeDir="false" afterPath="$PROJECT_DIR$/README.md" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/pom.xml" beforeDir="false" afterPath="$PROJECT_DIR$/pom.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/test/java/BookingTests.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/test/java/BookingTests.java" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -54,16 +53,6 @@
         <option name="Make" enabled="true" />
       </method>
     </configuration>
-    <configuration name="BookingTests.CreateBooking_WithValidData_returnOk" type="JUnit" factoryName="JUnit" temporary="true" nameIsGenerated="true">
-      <module name="APIAutomationTestsChallengeRestAssured" />
-      <option name="PACKAGE_NAME" value="" />
-      <option name="MAIN_CLASS_NAME" value="BookingTests" />
-      <option name="METHOD_NAME" value="CreateBooking_WithValidData_returnOk" />
-      <option name="TEST_OBJECT" value="method" />
-      <method v="2">
-        <option name="Make" enabled="true" />
-      </method>
-    </configuration>
     <configuration name="BookingTests.UpdateBooking_WithValidData_returnOk" type="JUnit" factoryName="JUnit" temporary="true" nameIsGenerated="true">
       <module name="APIAutomationTestsChallengeRestAssured" />
       <option name="PACKAGE_NAME" value="" />
@@ -84,12 +73,33 @@
         <option name="Make" enabled="true" />
       </method>
     </configuration>
+    <configuration name="BookingTests.getBookingById_returnOk" type="JUnit" factoryName="JUnit" temporary="true" nameIsGenerated="true">
+      <module name="APIAutomationTestsChallengeRestAssured" />
+      <option name="PACKAGE_NAME" value="" />
+      <option name="MAIN_CLASS_NAME" value="BookingTests" />
+      <option name="METHOD_NAME" value="getBookingById_returnOk" />
+      <option name="TEST_OBJECT" value="method" />
+      <method v="2">
+        <option name="Make" enabled="true" />
+      </method>
+    </configuration>
+    <configuration name="BookingTests.getBookingsIdsByFirstName_returnOk" type="JUnit" factoryName="JUnit" temporary="true" nameIsGenerated="true">
+      <module name="APIAutomationTestsChallengeRestAssured" />
+      <option name="PACKAGE_NAME" value="" />
+      <option name="MAIN_CLASS_NAME" value="BookingTests" />
+      <option name="METHOD_NAME" value="getBookingsIdsByFirstName_returnOk" />
+      <option name="TEST_OBJECT" value="method" />
+      <method v="2">
+        <option name="Make" enabled="true" />
+      </method>
+    </configuration>
     <recent_temporary>
       <list>
         <item itemvalue="JUnit.BookingTests" />
-        <item itemvalue="JUnit.BookingTests.UpdateBooking_WithValidData_returnOk" />
-        <item itemvalue="JUnit.BookingTests.CreateBooking_WithValidData_returnOk" />
+        <item itemvalue="JUnit.BookingTests.getBookingById_returnOk" />
+        <item itemvalue="JUnit.BookingTests.getBookingsIdsByFirstName_returnOk" />
         <item itemvalue="JUnit.BookingTests.getAllBookingsByUserFirstName_BookingExists_returnOk" />
+        <item itemvalue="JUnit.BookingTests.UpdateBooking_WithValidData_returnOk" />
       </list>
     </recent_temporary>
   </component>

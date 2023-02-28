@@ -99,21 +99,6 @@ public class BookingTests {
 
     @Test
     @Order(3)
-    public void  getAllBookingsByUserFirstName_BookingExists_returnOk(){
-        request
-                .when()
-                .queryParam("firstName", "Lorena")
-                .get("/booking")
-                .then()
-                .assertThat()
-                .statusCode(200)
-                .contentType(ContentType.JSON)
-                .and()
-                .body("results", hasSize(greaterThan(0)));
-    }
-
-    @Test
-    @Order(4)
     public void  createBooking_WithValidData_returnOk(){
         response = request
                 .contentType(ContentType.JSON)
@@ -129,6 +114,18 @@ public class BookingTests {
                 .extract().response();
 
         bookingId = response.path("bookingid").toString();
+    }
+
+    @Test
+    @Order(4)
+    public void  getBookingById_returnOk(){
+        request
+                .when()
+                .get("/booking/" + bookingId)
+                .then()
+                .assertThat()
+                .statusCode(200)
+        ;
     }
 
     @Test
